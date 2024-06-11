@@ -1,0 +1,26 @@
+<!-- templates/menu/order_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários</title>
+</head>
+<body>
+    <h1>Comandas</h1>
+    <ul>
+        {% for pedido in pedidos %}
+        <li>
+            Mesa: {{ pedido.mesa }}
+            <form action="{% url 'delete_order' pedido.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Excluir</button>
+            </form>
+            <a href="{% url 'order_detail' pedido.id %}">
+                <button type="button">Visualizar Pedido</button>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

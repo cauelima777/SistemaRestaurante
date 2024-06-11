@@ -1,0 +1,19 @@
+<!-- templates/menu/order_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Pedido</title>
+</head>
+<body>
+    <h1>Detalhes do Pedido</h1>
+    <p><strong>Mesa:</strong> {{ pedido.mesa }}</p>
+    <p><strong>Item do Menu:</strong> {{ pedido.menu_item.name }}</p>
+    <p><strong>Descrição:</strong> {{ pedido.menu_item.description }}</p>
+    <p><strong>Preço:</strong> R${{ pedido.menu_item.price }}</p>
+    <p><strong>Data do Pedido:</strong> {{ pedido.created_at }}</p>
+    <p><strong>Quantidade: </strong> {{ pedido.quantidade }}</p>
+    <a href="{% url 'order_list' %}">Voltar para a lista de pedidos</a>
+</body>
+</html>

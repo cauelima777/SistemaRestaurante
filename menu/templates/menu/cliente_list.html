@@ -1,0 +1,22 @@
+<!-- templates/menu/cliente_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente</title>
+</head>
+<body>
+    <h1>Cliente</h1>
+    <ul>
+        {% for item in menu_items %}
+        <li>
+            {{ item.name }} - {{ item.description }} - ${{ item.price }}
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- Link para fazer pedido fora do loop -->
+    <a href="{% url 'make_order' %}">Fazer Pedido</a>
+
+</body>
+</html>
