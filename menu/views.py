@@ -66,3 +66,8 @@ def delete_order(request, order_id):
 def order_detail(request, pedido_id):
     pedido = get_object_or_404(Pedido, pk=pedido_id)
     return render(request, 'menu/order_detail.html', {'pedido': pedido})
+
+
+
+def index(request):
+    return render(request, 'menu/index.html')
