@@ -13,5 +13,9 @@ urlpatterns = [
     path('deletar/<int:order_id>/', views.delete_order, name='delete_order'),
     path('visualizar/<int:pedido_id>/', views.order_detail, name='order_detail'), 
 
+    path('api/menuitems/', views.MenuItemListCreateAPIView.as_view(), name='api_menuitem_list_create'),
+    path('api/menuitems/<int:pk>/', views.MenuItemRetrieveUpdateDestroyAPIView.as_view(), name='api_menuitem_detail'),
+
+
     path('comandas/', views.order_list, name='order_list'),  
 ]
